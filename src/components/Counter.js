@@ -1,4 +1,24 @@
 import React, { useState } from 'react'
+import styled from 'styled-components'
+
+const Wrapper = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+`
+
+const ButtonWrapper = styled.div`
+display: flex;
+`
+
+const LifeCounter1 = styled.p`
+font-size: 40px;
+transform: rotate(180deg);
+`
+
+const LifeCounter2 = styled.p`
+font-size: 40px;
+`
 
 const Counter = () => {
 
@@ -11,15 +31,19 @@ const Counter = () => {
   }
 
   return (
-    <div>
-      <p>Player 1:{player1}</p>
-      <button onClick={() => setPlayer1(player1 + 1)}>+</button>
+    <Wrapper>
+      <ButtonWrapper>
       <button onClick={() => setPlayer1(player1 - 1)}>-</button>
-      <p>Player 2:{player2}</p>
+      <button onClick={() => setPlayer1(player1 + 1)}>+</button>
+      </ButtonWrapper>
+      <LifeCounter1>{player1}</LifeCounter1>
+      <button onClick={() => clearState()}>O</button>
+      <LifeCounter2>{player2}</LifeCounter2>
+      <ButtonWrapper>
       <button onClick={() => setPlayer2(player2 + 1)}>+</button>
       <button onClick={() => setPlayer2(player2 - 1)}>-</button>
-      <button onClick={() => clearState()}>O</button>
-    </div>
+      </ButtonWrapper>
+    </Wrapper>
   )
 }
 
