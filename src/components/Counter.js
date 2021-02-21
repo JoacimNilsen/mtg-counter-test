@@ -8,6 +8,8 @@ const Wrapper = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
+justify-content: center;
+height: 100vh;
 `
 
 const ButtonWrapper = styled.div`
@@ -16,11 +18,13 @@ display: flex;
 
 const LifeCounter1 = styled.p`
 font-size: 70px;
+line-height: 0;
 transform: rotate(180deg);
 `
 
 const LifeCounter2 = styled.p`
 font-size: 70px;
+line-height: 0;
 `
 
 const Counter = () => {
