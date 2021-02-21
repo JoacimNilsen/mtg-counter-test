@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import Buttons from './Buttons'
+
+const {Increase, Decrease} = Buttons
 
 const Wrapper = styled.div`
 display: flex;
@@ -33,15 +36,15 @@ const Counter = () => {
   return (
     <Wrapper>
       <ButtonWrapper>
-      <button onClick={() => setPlayer1(player1 - 1)}>-</button>
-      <button onClick={() => setPlayer1(player1 + 1)}>+</button>
+      <Decrease handleClick={() => setPlayer1(player1 - 1)}>-</Decrease>
+      <Increase handleClick={() => setPlayer1(player1 + 1)}>+</Increase>
       </ButtonWrapper>
       <LifeCounter1>{player1}</LifeCounter1>
       <button onClick={() => clearState()}>O</button>
       <LifeCounter2>{player2}</LifeCounter2>
       <ButtonWrapper>
-      <button onClick={() => setPlayer2(player2 + 1)}>+</button>
-      <button onClick={() => setPlayer2(player2 - 1)}>-</button>
+      <Increase handleClick={() => setPlayer2(player2 + 1)}>+</Increase>
+      <Decrease handleClick={() => setPlayer2(player2 - 1)}>-</Decrease>
       </ButtonWrapper>
     </Wrapper>
   )
