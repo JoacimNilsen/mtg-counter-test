@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import Buttons from './Buttons'
 
-const {Increase, Decrease, Reload, Settings} = Buttons
+
+const {Increase, Decrease, Reload, Settings, Wakelock} = Buttons
 
 const Wrapper = styled.div`
 display: flex;
@@ -47,6 +48,7 @@ const Counter = ({player1Color, player2Color}) => {
       </ButtonWrapper>
       <LifeCounter1>{player1}</LifeCounter1>
       <ButtonWrapper>
+      <Wakelock />
       <Reload handleClick={() => clearState()} />
       <Settings />
       </ButtonWrapper>
