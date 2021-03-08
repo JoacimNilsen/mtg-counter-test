@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 
 const StyledSettings = styled.div`
-width: 50px;
+width: 5em;
 border: none;
 background-color:transparent;
 outline:none;
