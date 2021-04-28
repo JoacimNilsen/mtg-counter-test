@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledReload = styled.button`
-width: 100px;
+width: 70px;
 border: none;
 background-color:transparent;
 outline:none;

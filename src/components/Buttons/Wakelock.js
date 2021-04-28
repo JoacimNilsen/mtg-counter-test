@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const NoSleep = styled.button`
  display: inline-block;
- width: 100px;
+ width: 80px;
  border: 0.4em solid #000000;
  border-radius: 1em;
  box-sizing: border-box;

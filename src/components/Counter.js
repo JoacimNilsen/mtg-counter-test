@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Buttons from './Buttons'
 
 
-const {Increase, Decrease, Reload, Settings, Wakelock} = Buttons
+const {Increase, Decrease, Reload, Settings, Wakelock, Dice} = Buttons
 
 const Wrapper = styled.div`
 display: flex;
@@ -35,6 +35,8 @@ const Counter = ({player1Color, player2Color}) => {
   const [player1, setPlayer1] = useState(20)
   const [player2, setPlayer2] = useState(20)
 
+  const diceRoll = useState(0)
+
   const clearState = () => {
     setPlayer1(20)
     setPlayer2(20)
@@ -51,6 +53,7 @@ const Counter = ({player1Color, player2Color}) => {
       <Wakelock />
       <Reload handleClick={() => clearState()} />
       <Settings />
+      <Dice />
       </ButtonWrapper>
       <LifeCounter2>{player2}</LifeCounter2>
       <ButtonWrapper>
