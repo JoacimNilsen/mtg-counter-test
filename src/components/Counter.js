@@ -42,7 +42,7 @@ const Counter = ({player1Color, player2Color}) => {
     setPlayer2(20)
   }
 
-  const randomNumber = () => Math.round(Math.random() * 20)
+  const randomNumber = () => Math.round(Math.random() * 19 ) + 1
 
   return (
     <Wrapper topColor={player1Color} bottomColor={player2Color}>
