@@ -35,14 +35,10 @@ const Counter = ({player1Color, player2Color}) => {
   const [player1, setPlayer1] = useState(20)
   const [player2, setPlayer2] = useState(20)
 
-  const [diceRoll, setDiceRoll] = useState(0)
-
   const clearState = () => {
     setPlayer1(20)
     setPlayer2(20)
   }
-
-  const randomNumber = () => Math.round(Math.random() * 19 ) + 1
 
   return (
     <Wrapper topColor={player1Color} bottomColor={player2Color}>
@@ -55,8 +51,7 @@ const Counter = ({player1Color, player2Color}) => {
       <Wakelock />
       <Reload handleClick={() => clearState()} />
       <Settings />
-      <Dice handleClick={() => setDiceRoll(randomNumber())} />
-      {diceRoll}
+      <Dice />
       </ButtonWrapper>
       <LifeCounter2>{player2}</LifeCounter2>
       <ButtonWrapper>

@@ -1,16 +1,39 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 
 const StyledDice = styled.button`
-width: 70px;
+width: 100%;
 border: none;
 background-color:transparent;
 outline:none;
 `
 
-const Dice = ({handleClick}) => {
+const DiceWrapper = styled.div`
+width: 70px;
+display: flex;
+align-items: center;
+position: relative;
+`
+
+const DiceResult = styled.div`
+position: absolute;
+font-size: 18px;
+font-weight: bold;
+color: #dedede;
+pointer-events: none;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+`
+
+const randomNumber = () => Math.round(Math.random() * 19 ) + 1
+
+const Dice = () => {
+  const [diceRoll, setDiceRoll] = useState(20)
   return (
-    <StyledDice onClick={handleClick}>
+    <DiceWrapper>
+    <StyledDice onClick={() => setDiceRoll(randomNumber())}>
       <svg version="1.1" viewBox="0 0 512 512" >
         <g>
         <g>
@@ -19,7 +42,10 @@ const Dice = ({handleClick}) => {
       </g>
       </g>
       </svg>
+     
     </StyledDice>
+     <DiceResult>{diceRoll}</DiceResult>
+     </DiceWrapper>
   )
 }
 
